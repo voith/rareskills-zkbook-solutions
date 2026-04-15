@@ -43,21 +43,21 @@ To prove `u ≥ v`, we reduce comparison to a bit-decomposition problem. Assume 
 First, decompose `u` and `v` into binary:
 
 $$
-\sum_{i=0}^{n-2} 2^i a_i \;===\; u
+\sum_{i=0}^{n-2} 2^i a_i === u
 $$
 
 $$
-\sum_{i=0}^{n-2} 2^i b_i \;===\; v
+\sum_{i=0}^{n-2} 2^i b_i === v
 $$
 
 where each bit is constrained to be Boolean:
 
 $$
-\forall i \in \{0, \dots, n-2\}, \quad a_i(a_i - 1) \;===\; 0
+\forall i \in \{0, \dots, n-2\}, \quad a_i(a_i - 1) === 0
 $$
 
 $$
-\forall i \in \{0, \dots, n-2\}, \quad b_i(b_i - 1) \;===\; 0
+\forall i \in \{0, \dots, n-2\}, \quad b_i(b_i - 1) === 0
 $$
 
 Next, encode
@@ -69,19 +69,19 @@ $$
 as an `n`-bit number:
 
 $$
-2^{n-1} + (u - v) \;===\; \sum_{i=0}^{n-1} 2^i c_i
+2^{n-1} + (u - v) === \sum_{i=0}^{n-1} 2^i c_i
 $$
 
-with Boolean constraints on the `c_i` bits:
+with Boolean constraints on the `Ci` bits:
 
 $$
-\forall i \in \{0, \dots, n-1\}, \quad c_i(c_i - 1) \;===\; 0
+\forall i \in \{0, \dots, n-1\}, \quad c_i(c_i - 1) === 0
 $$
 
 Finally, require the most significant bit to be `1`:
 
 $$
-c_{n-1} \;===\; 1
+c_{n-1} === 1
 $$
 
 This works because $$2^{n-1} + (u - v)$$ has most significant bit `1` exactly when $$u - v \ge 0$$, which is equivalent to $$u \ge v$$
