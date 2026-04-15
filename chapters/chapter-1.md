@@ -29,6 +29,6 @@
   Since the output is `1` when both bits are `1` or both bits are `0`, the formula is `(A ∧ B) ∨ ¬(A ∨ B)`.
 - The zk-book also explored a boolean formula for the 3-coloring a map problem.
 
-## Problems
+## Practice Problems
 
 There are no problems in this chapter.
