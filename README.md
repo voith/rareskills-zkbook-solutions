@@ -6,3 +6,4 @@ This repository is where I will keep my personal notes, worked examples, and sol
 
 - [Chapter 1: P vs NP and Its Application to Zero Knowledge Proofs](chapters/chapter-1.md)
 - [Chapter 2: Arithmetic Circuits for ZK](chapters/chapter-2.md)
+- [Chapter 3: Finite Fields and Modular Arithmetic for ZK Proofs](chapters/chapter-3.md)
