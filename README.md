@@ -1,6 +1,6 @@
 # RareSkills zk-Book Notes and Solutions
 
-This repository is where I will keep my personal notes, worked examples, and solutions while studying the RareSkills zk-book. The goal is to build up a chapter-by-chapter record of concepts, exercises, and references as I progress through the material.
+This repository is where I will keep my personal notes, worked examples, and solutions while studying the [RareSkills zk-book](https://rareskills.io/zk-book). The goal is to build up a chapter-by-chapter record of concepts, exercises, and references as I progress through the material.
 
 ## Chapters
 
