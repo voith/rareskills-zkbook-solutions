@@ -72,7 +72,7 @@ $$
 2^{n-1} + (u - v) === \sum_{i=0}^{n-1} 2^i c_i
 $$
 
-with Boolean constraints on the `Ci` bits:
+with Boolean constraints on the $$c_i$$ bits:
 
 $$
 \forall i \in \{0, \dots, n-1\}, \quad c_i(c_i - 1) === 0
