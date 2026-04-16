@@ -198,19 +198,19 @@ Because $$p$$ is prime, every nonzero element has a multiplicative inverse. That
     We need to calculate:
     $$x^2 \bmod 11 \quad \forall x \in \mathbb{F}_{11}$$
 
-    $$\begin{aligned}
-    0^2 &= 0 \\
-    1^2 &= 1 \\
-    2^2 &= 4 \\
-    3^2 &= 9 \\
-    4^2 &= 16 \equiv 5 \pmod{11} \\
-    5^2 &= 25 \equiv 3 \pmod{11} \\
-    6^2 &= 36 \equiv 3 \pmod{11} \\
-    7^2 &= 49 \equiv 5 \pmod{11} \\
-    8^2 &= 64 \equiv 9 \pmod{11} \\
-    9^2 &= 81 \equiv 4 \pmod{11} \\
-    10^2 &= 100 \equiv 1 \pmod{11}
-    \end{aligned}$$
+    | $$x$$ | $$x^2$$ | $$x^2 \bmod 11$$ |
+    |---|---|---|
+    | $$0$$ | $$0$$ | $$0$$ |
+    | $$1$$ | $$1$$ | $$1$$ |
+    | $$2$$ | $$4$$ | $$4$$ |
+    | $$3$$ | $$9$$ | $$9$$ |
+    | $$4$$ | $$16$$ | $$5$$ |
+    | $$5$$ | $$25$$ | $$3$$ |
+    | $$6$$ | $$36$$ | $$3$$ |
+    | $$7$$ | $$49$$ | $$5$$ |
+    | $$8$$ | $$64$$ | $$9$$ |
+    | $$9$$ | $$81$$ | $$4$$ |
+    | $$10$$ | $$100$$ | $$1$$ |
 
     Now group numbers that give the same result:
 
