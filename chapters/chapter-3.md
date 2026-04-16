@@ -136,4 +136,42 @@ Coming soon.
 
 ## Practice Problems
 
-Coming soon.
+1. Find the multiplicative inverse of 3 modulo 5. There are only 5 possibilities, so try all of them and see which ones work.
+
+   Solution:
+
+   Try values modulo `5` until the product is congruent to `1`:
+
+   - $$3 \cdot 0 = 0 \not\equiv 1 \pmod 5$$
+   - $$3 \cdot 1 = 3 \not\equiv 1 \pmod 5$$
+   - $$3 \cdot 2 = 6 \equiv 1 \pmod 5$$
+
+   So,
+
+   $$
+   3^{-1} \equiv 2 \pmod 5
+   $$
+
+2. What is the multiplicative inverse of 50 in the finite field p=51? You do not need Python to compute this, see the principles described in “General rules of multiplicative inverses.”
+
+   Solution:
+
+   We need to find the multiplicative inverse of
+
+   $$
+   50 \pmod{51}
+   $$
+
+   Notice that this is of the form $$(p - 1) \pmod p$$. The inverse of $$(p - 1) \pmod p$$ is $$p - 1$$.
+
+   Hence, $$50$$ is the inverse of $$50 \pmod{51}$$.
+
+
+3. Use Python to compute the multiplicative inverse of 288 in the finite field of p = 311. You can check your work by validating that (288 * answer) % 311 == 1
+
+    ```python
+    p = 311
+    inverse = pow(288, -1, p)
+    print(f"inverse of 288 mod {p} = {inverse}")
+    assert (288 * inverse) % 311 == 1
+    ```
