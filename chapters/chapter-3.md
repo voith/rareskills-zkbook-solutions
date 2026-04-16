@@ -156,9 +156,7 @@ Because $$p$$ is prime, every nonzero element has a multiplicative inverse. That
 
    So,
 
-   $$
-   3^{-1} \equiv 2 \pmod 5
-   $$
+   $$3^{-1} \equiv 2 \pmod 5$$
 
 2. What is the multiplicative inverse of 50 in the finite field p=51? You do not need Python to compute this, see the principles described in “General rules of multiplicative inverses.”
 
@@ -166,9 +164,7 @@ Because $$p$$ is prime, every nonzero element has a multiplicative inverse. That
 
    We need to find the multiplicative inverse of
 
-   $$
-   50 \pmod{51}
-   $$
+   $$50 \pmod{51}$$
 
    Notice that this is of the form $$(p - 1) \pmod p$$. The inverse of $$(p - 1) \pmod p$$ is $$p - 1$$.
 
@@ -203,17 +199,17 @@ Because $$p$$ is prime, every nonzero element has a multiplicative inverse. That
     $$x^2 \bmod 11 \quad \forall x$$
     $$
     \begin{aligned}
-        0^2 &= 0 \\
-        1^2 &= 1 \\
-        2^2 &= 4 \\
-        3^2 &= 9 \\
-        4^2 &= 16 \equiv 5 \\
-        5^2 &= 25 \equiv 3 \\
-        6^2 &= 36 \equiv 3 \\
-        7^2 &= 49 \equiv 5 \\
-        8^2 &= 64 \equiv 9 \\
-        9^2 &= 81 \equiv 4 \\
-        10^2 &= 100 \equiv 1
+    0^2 &= 0 \\
+    1^2 &= 1 \\
+    2^2 &= 4 \\
+    3^2 &= 9 \\
+    4^2 &= 16 \equiv 5 \\
+    5^2 &= 25 \equiv 3 \\
+    6^2 &= 36 \equiv 3 \\
+    7^2 &= 49 \equiv 5 \\
+    8^2 &= 64 \equiv 9 \\
+    9^2 &= 81 \equiv 4 \\
+    10^2 &= 100 \equiv 1
     \end{aligned}
     $$
 
