@@ -131,8 +131,16 @@ Taking powers and reducing modulo $$p$$ always gives another field element.
 Because $$p$$ is prime, every nonzero element has a multiplicative inverse. That is why arithmetic modulo $$p$$ forms a field rather than just a ring.
 
 ## Notes
-
-Coming soon.
+- $$a^{p-2} \pmod p$$ is the multiplicative inverse of a, since $$a(a^{p-2})\equiv 1 \pmod p$$
+- Code for finding the equivalent of a fraction in a modular finite field.
+    ```python
+    def compute_field_element_from_fraction(num, den, p):
+        inv_den = pow(den, -1, p)
+        return (num * inv_den) % p
+    ```
+- No two elements can be multiplied together to obtain zero in a finite field unless one of the elements is zero itself. This is also true of regular numbers.
+-  The second square root is always the additive inverse of the first square root, just like real numbers.
+ 
 
 ## Practice Problems
 
@@ -175,3 +183,57 @@ Coming soon.
     print(f"inverse of 288 mod {p} = {inverse}")
     assert (288 * inverse) % 311 == 1
     ```
+
+4. Verify the claimed square roots in the table are correct in the finite field modulo 11.
+    | Element | 1st Square Root | 2nd Square Root  |
+    |--------|------------------|------------------|
+    | 0      | 0                | n/a              |
+    | 1      | 1                | 10               |
+    | 3      | 5                | 6                |
+    | 4      | 2                | 9                |
+    | 5      | 4                | 7                |
+    | 9      | 3                | 8                |
+
+    Solution:
+
+    We are in the field:
+    $$\mathbb{F}_{11} = \{0,1,2,\dots,10\}$$
+
+    We need to calculate:
+    $$x^2 \bmod 11 \quad \forall x$$
+    $$
+    \begin{aligned}
+        0^2 &= 0 \\
+        1^2 &= 1 \\
+        2^2 &= 4 \\
+        3^2 &= 9 \\
+        4^2 &= 16 \equiv 5 \\
+        5^2 &= 25 \equiv 3 \\
+        6^2 &= 36 \equiv 3 \\
+        7^2 &= 49 \equiv 5 \\
+        8^2 &= 64 \equiv 9 \\
+        9^2 &= 81 \equiv 4 \\
+        10^2 &= 100 \equiv 1
+    \end{aligned}
+    $$
+
+    Now group numbers that give the same result:
+
+    - For element 0
+        $$0^2 = 0$$
+      only root is 0
+    - For element 1
+        $$1^2 = 1,\quad 10^2 = 1$$
+      roots: 1, 10
+    - For element 3
+        $$5^2 = 3,\quad 6^2 = 3$$
+      roots: 5, 6
+    - For element 4
+        $$2^2 = 4,\quad 9^2 = 4$$
+      roots: 2, 9
+    - For element 5
+        $$4^2 = 5,\quad 7^2 = 5$$
+      roots: 4, 7
+    - For element 9
+        $$3^2 = 9,\quad 8^2 = 9$$
+      roots: 3, 8
