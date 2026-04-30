@@ -142,7 +142,12 @@ Because $$p$$ is prime, every nonzero element has a multiplicative inverse. That
 - No two elements can be multiplied together to obtain zero in a finite field unless one of the elements is zero itself. This is also true of regular numbers.
 -  The second square root is always the additive inverse of the first square root, just like real numbers.
  - Just because a linear system of equations over real numbers has zero, one, or infinite solutions it does not imply that the same linear system of equations over a finite field will also have zero, one or, p many solutions.
-
+- the roots of a polynomial over real numbers does not necessarily have the same roots in a finite field.
+- Polynomials in finite fields share many properties with polynomials over the real numbers:
+  - A polynomial of degree $$d$$ has at most $$d$$ roots. The roots of a polynomial $$p(x)$$ are the values $$r$$ such that $$p(r) = 0$$.
+  - If we add two polynomials $$p_1$$ and $$p_2$$, the degree of $$p_1 + p_2$$ is at most $$\max(\deg(p_1), \deg(p_2))$$. It can be smaller. For example, if $$p_1 = x^3 + 5x + 7$$ and $$p_2 = -x^3$$, then the cubic terms cancel.
+  - Adding polynomials in a finite field follows the associative, commutative, and distributive laws.
+  - If we multiply two polynomials $$p_1$$ and $$p_2$$, the roots of the product are the union of the roots of $$p_1$$ and $$p_2$$.
 ## Practice Problems
 
 1. Find the multiplicative inverse of 3 modulo 5. There are only 5 possibilities, so try all of them and see which ones work.
@@ -257,4 +262,44 @@ Because $$p$$ is prime, every nonzero element has a multiplicative inverse. That
   Therefore, the above equation becomes
   $$y = 5x + 7$$
   which is the same as the previous equation.
-  
+
+7. Use the finite field
+   $$p = 21888242871839275222246405745257275088548364400416034343698204186575808495617$$
+   for this problem.
+   A developer creates an arithmetic circuit $$x \cdot y \cdot z = 0$$ and $$x + y + z = 0$$ with the intent of constraining all the signals to be zero. Find a counterexample where the constraints are satisfied, but not all of $$x$$, $$y$$, and $$z$$ are zero.
+
+   Solution:
+
+   The constraint
+   $$x \cdot y \cdot z = 0$$
+   is satisfied whenever at least one of $$x$$, $$y$$, or $$z$$ is zero.
+
+   Let $$x = 0$$.
+
+   Substituting this into
+   $$x + y + z = 0$$
+   gives
+   $$y = -z$$
+
+   So one possible counterexample is:
+
+   $$x = 0$$
+   $$y = 1$$
+   $$z = -1 \equiv 21888242871839275222246405745257275088548364400416034343698204186575808495616 \pmod{21888242871839275222246405745257275088548364400416034343698204186575808495617}$$
+8. A developer creates a circuit with the polynomial
+   $$x^2 + 2x + 3 = 11$$
+   and proves that $$2$$ is a solution. What is the other solution?
+   Hint: rewrite the circuit as
+   $$x^2 + 2x - 8 = 0$$
+   then factor the polynomial by hand to find the roots. Finally, compute the congruent element of the root in the finite field to find the other solution. Use
+   $$p = 21888242871839275222246405745257275088548364400416034343698204186575808495616$$
+
+   Solution:
+
+   Rewriting the equation gives
+   $$x^2 + 2x - 8 = 0$$
+
+   This has roots $$x = 2$$ and $$x = -4$$.
+
+   Hence, the other solution is
+   $$x = -4 \equiv 21888242871839275222246405745257275088548364400416034343698204186575808495613 \pmod{21888242871839275222246405745257275088548364400416034343698204186575808495616}$$
