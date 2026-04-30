@@ -140,7 +140,7 @@ Because $$p$$ is prime, every nonzero element has a multiplicative inverse. That
     ```
 - No two elements can be multiplied together to obtain zero in a finite field unless one of the elements is zero itself. This is also true of regular numbers.
 -  The second square root is always the additive inverse of the first square root, just like real numbers.
- 
+ - Just because a linear system of equations over real numbers has zero, one, or infinite solutions it does not imply that the same linear system of equations over a finite field will also have zero, one or, p many solutions.
 
 ## Practice Problems
 
@@ -232,3 +232,14 @@ Because $$p$$ is prime, every nonzero element has a multiplicative inverse. That
     - For element 9
         $$3^2 = 9,\quad 8^2 = 9$$
       roots: 3, 8
+5. Use the code snippet below to compute the modular square root of 5 in the finite field of p = 19. The code will only give you one of the answers. How can you compute the other?
+    ```python
+    def mod_sqrt(x, p):
+	assert (p - 3) % 4 == 0, "prime not 4k + 3"
+	exponent = (p + 1) // 4
+	return pow(x, exponent, p) # x ^ e % p
+    ```
+    Solution: 
+    The code for `mod_sqrt(5, 19)` returns 9.
+    The second square will be $$19-9 = 10$$
+
