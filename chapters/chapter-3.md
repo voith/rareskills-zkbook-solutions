@@ -131,6 +131,7 @@ Taking powers and reducing modulo $$p$$ always gives another field element.
 Because $$p$$ is prime, every nonzero element has a multiplicative inverse. That is why arithmetic modulo $$p$$ forms a field rather than just a ring.
 
 ## Notes
+- To find the additive inverse of $$a$$ compute $$p-a$$
 - $$a^{p-2} \pmod p$$ is the multiplicative inverse of a, since $$a(a^{p-2})\equiv 1 \pmod p$$
 - Code for finding the equivalent of a fraction in a modular finite field.
     ```python
@@ -242,4 +243,18 @@ Because $$p$$ is prime, every nonzero element has a multiplicative inverse. That
     Solution: 
     The code for `mod_sqrt(5, 19)` returns 9.
     The second square will be $$19-9 = 10$$
-
+6. Convert the two equations to their finite field representation and see they are the same for $$p = 11$$.
+  $$x + 2y = 3$$, $$4x + 8y = 1$$
+  Solution:
+  Rearranging the terms, we get
+  $$y = -\frac{1}{2}x + \frac{3}{2}$$
+  The multiplicative inverse of 2 modulo 11 is 6, and $$-6 \equiv 5 \pmod{11}$$. Hence, $$\frac{3}{2} \bmod 11 = 3 \cdot 6 \bmod 11 = 7$$.
+  Therefore, the above equation becomes
+  $$y = 5x + 7$$
+  Now let's rearrange $$4x + 8y = 1$$. We get:
+  $$y = -\frac{1}{2}x + \frac{1}{8}$$
+  $$\frac{1}{8} \bmod 11 = 7$$
+  Therefore, the above equation becomes
+  $$y = 5x + 7$$
+  which is the same as the previous equation.
+  
